@@ -12,6 +12,9 @@ bp = Blueprint("pooling_bp", "pooling_bp")
 def pooling_view(*args, **kwargs):
     task_id = request.json["task_id"]
     result = AsyncResult(task_id)
+    if not result:
+        return "Not found", 404
+
     status = {
         "task_id": result.task_id,
         "status": result.status,
