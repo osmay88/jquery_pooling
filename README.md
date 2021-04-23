@@ -1,4 +1,4 @@
-#example of pooling a task created in celery
+# Example of pooling a task created in celery
 
 ## how to run
 
